@@ -21,3 +21,17 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+target/
+test-output/
+bin/
+.DS_Store
+.classpath
+.settings
+.project
+.iml
+.html
+
+# .idea file in intellij IEDA
+*.idea
+/SeleniumRelativeLocators.iml
