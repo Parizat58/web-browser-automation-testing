@@ -54,11 +54,11 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.applitools/eyes-common-java3 -->
+        <!-- https://mvnrepository.com/artifact/com.applitools/eyes-selenium-java3 -->
         <dependency>
             <groupId>com.applitools</groupId>
-            <artifactId>eyes-common-java3</artifactId>
-            <version>3.32.1</version>
+            <artifactId>eyes-selenium-java3</artifactId>
+            <version>3.160.3</version>
         </dependency>
 
 
