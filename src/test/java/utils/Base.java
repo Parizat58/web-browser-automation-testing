@@ -10,7 +10,7 @@ public class Base {
 
   static final Logger logger = LoggerFactory.getLogger(Logger.class.getName());
   protected static WebDriver driver;
-  protected static EyesUtils eyesUtils;
+  protected static EyesTestManager eyesTestManager;
   protected static GlobalUtils myUtils;
   protected static PropertiesManager readingProperties;
 
@@ -21,7 +21,7 @@ public class Base {
     myUtils = GlobalUtils.valueOf(driver);
     driver = myUtils.startChromeDriver();
     driver.get(readingProperties.readProperty("site.url"));
-    eyesUtils = new EyesUtils(driver, readingProperties.readProperty("appName"));
+    eyesTestManager = new EyesTestManager(driver, readingProperties.readProperty("appName"));
   }
 
   @AfterClass
@@ -29,7 +29,7 @@ public class Base {
     logger.info("After all test completed");
     if (driver != null) {
       driver.quit();
-      eyesUtils.abort();
+      eyesTestManager.abort();
     }
   }
 }
