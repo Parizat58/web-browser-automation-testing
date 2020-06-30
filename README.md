@@ -9,6 +9,7 @@ Demo site:
 
 ## Reading data from an excel spreadsheet
 Use: Apacahe POI
+Demo web app: Amazon
 
-## Some new Java features in Test Automation
+## Added some new Java features in Test Automation
 Example: forEach
