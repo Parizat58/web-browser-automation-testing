@@ -22,7 +22,7 @@ public class GlobalUtils extends Base {
   protected String currentTestName;
 
   private GlobalUtils(WebDriver driver){
-    this.driver = driver;
+    Base.driver = driver;
   }
   public static GlobalUtils valueOf(WebDriver driver){
     return new GlobalUtils(driver);
@@ -52,6 +52,16 @@ public class GlobalUtils extends Base {
     WebElement dynamicElem = null;
     try {
       dynamicElem = (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
+    } catch (Exception e) {
+      logger.error("Error: ", e);
+      Assert.assertTrue(false);
+    }
+    return dynamicElem;
+  }
+  public WebElement waitUntilElementClickable(WebElement element) {
+    WebElement dynamicElem = null;
+    try {
+      dynamicElem = (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(element));
     } catch (Exception e) {
       logger.error("Error: ", e);
       Assert.assertTrue(false);

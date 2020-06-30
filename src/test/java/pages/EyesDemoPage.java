@@ -1,34 +1,27 @@
 package pages;
 
+import WebElementsFactory.HomePageElements;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import utils.Base;
 
 public class EyesDemoPage extends Base {
 
-  private By userName = By.xpath("//input[@name='username']");
-  private By password = By.xpath("//input[@name='password']");
-  private By submit = By.xpath("//input[@class='button']");
-  private By homepageIcon = By.xpath("//a[contains(text(),'home')]");
-
-  public EyesDemoPage(WebDriver driver) {
-    Base.driver = driver;
-  }
+  static final Logger logger = LoggerFactory.getLogger(Logger.class.getName());
+  HomePageElements elements = new HomePageElements();
 
   private void enterUsername() {
-    myUtils.waitUntilElementVisibility(userName);
-    driver.findElement(userName).sendKeys(readingProperties.readProperty("userName"));
-
+    elements.userName.sendKeys(readingProperties.readProperty("userName"));
   }
 
   private void enterPassword() {
-    myUtils.waitUntilElementVisibility(password);
-    driver.findElement(password).sendKeys(readingProperties.readProperty("passWord"));
+    elements.passWord.sendKeys(readingProperties.readProperty("passWord"));
   }
 
   private void clickSubmit() {
-    myUtils.waitUntilElementClickable(submit);
-    driver.findElement(submit).click();
+    myUtils.waitUntilElementClickable(elements.submit).click();
   }
 
   public void login() {
@@ -37,9 +30,8 @@ public class EyesDemoPage extends Base {
     clickSubmit();
   }
 
-  public void clickHomePageIcon(){
-    myUtils.waitUntilElementClickable(homepageIcon);
-    driver.findElement(homepageIcon).click();
+  public void clickHomePageIcon() {
+    myUtils.waitUntilElementClickable(elements.homepageIcon).click();
   }
 
   public By getHomepageIconLocator(){

@@ -20,7 +20,7 @@ public class Base {
     readingProperties = new PropertiesManager("src/test/resources/config.properties");
     myUtils = GlobalUtils.valueOf(driver);
     driver = myUtils.startChromeDriver();
-    driver.get(readingProperties.readProperty("site.url"));
+    driver.get(readingProperties.readProperty("parabank.site.url"));
     eyesTestManager = new EyesTestManager(driver, readingProperties.readProperty("appName"));
   }
 
