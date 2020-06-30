@@ -13,16 +13,16 @@ import java.util.Properties;
 public class PropertiesManager {
 
   static final Logger logger = LoggerFactory.getLogger(Logger.class.getName());
-  private String propertiesFile;
-  private Properties prop;
-  private OutputStream output;
-  private InputStream input;
+  private static String propertiesFile;
+  private static Properties prop;
+  private static OutputStream output;
+  private static InputStream input;
 
   public PropertiesManager(String propertiesFilePath) {
     propertiesFile = propertiesFilePath;
     prop = new Properties();
   }
-  public void setProperty(String key, String value) {
+  public static void setProperty(String key, String value) {
     try {
       output = new FileOutputStream(propertiesFile);
       prop.setProperty(key, value);
@@ -41,7 +41,7 @@ public class PropertiesManager {
     }
   }
 
-  public String readProperty(String key) {
+  public static String readProperty(String key) {
     String value = null;
     try {
       input = new FileInputStream(propertiesFile);
