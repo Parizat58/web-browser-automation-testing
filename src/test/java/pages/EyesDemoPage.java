@@ -4,20 +4,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.Base;
 
-public class Homepage extends Base {
+public class EyesDemoPage extends Base {
 
   private By userName = By.xpath("//input[@name='username']");
   private By password = By.xpath("//input[@name='password']");
   private By submit = By.xpath("//input[@class='button']");
   private By homepageIcon = By.xpath("//a[contains(text(),'home')]");
 
-  public Homepage(WebDriver driver) {
+  public EyesDemoPage(WebDriver driver) {
     Base.driver = driver;
   }
 
   private void enterUsername() {
     myUtils.waitUntilElementVisibility(userName);
     driver.findElement(userName).sendKeys(readingProperties.readProperty("userName"));
+
   }
 
   private void enterPassword() {

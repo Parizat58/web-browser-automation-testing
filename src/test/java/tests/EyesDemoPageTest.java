@@ -1,20 +1,20 @@
 package tests;
 
 import org.testng.annotations.Test;
-import pages.Homepage;
+import pages.EyesDemoPage;
 import utils.Base;
 
-public class ApplitoolsVisualTest extends Base {
+public class EyesDemoPageTest extends Base {
 
-  private Homepage page = new Homepage(driver);
+  private EyesDemoPage page = new EyesDemoPage(driver);
 
-  @Test
+  @Test(enabled = false)
   public void testLogin(){
      page.login();
      eyesTestManager.validateWindow();
   }
 
-  @Test
+  @Test(enabled = false)
   public void searches(){
      page.clickHomePageIcon();
      eyesTestManager.validateElement(page.getHomepageIconLocator());
