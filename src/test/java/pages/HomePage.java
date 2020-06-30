@@ -1,8 +1,6 @@
 package pages;
 
-import WebElementsFactory.HomePageElements;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import webElements.HomePageElements;
 import utils.Base;
 
 public class HomePage extends Base {

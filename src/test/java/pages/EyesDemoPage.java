@@ -1,6 +1,6 @@
 package pages;
 
-import WebElementsFactory.HomePageElements;
+import webElements.HomePageElements;
 
 import org.openqa.selenium.By;
 import org.slf4j.Logger;

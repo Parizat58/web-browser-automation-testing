@@ -1,6 +1,6 @@
 package tests;
 
-import WebElementsFactory.HomePageElements;
+import webElements.HomePageElements;
 import org.testng.annotations.Test;
 import pages.EyesDemoPage;
 import utils.Base;
