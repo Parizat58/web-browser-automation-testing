@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.Base;
 
-public class EyesDemoPage extends Base {
+public class VisualTestingPage extends Base {
 
   static final Logger logger = LoggerFactory.getLogger(Logger.class.getName());
   HomePageElements elements = new HomePageElements();

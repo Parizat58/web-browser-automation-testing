@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -110,4 +111,41 @@ public class GlobalUtils extends Base {
     }
     return driver;
   }
+  public void selectDropDown(WebElement element, int optionValueIndex) {
+    try {
+      Select dropdown = new Select(element);
+      dropdown.selectByIndex(optionValueIndex);
+    } catch (Exception e) {
+      logger.error("Error", e);
+      Assert.assertTrue(false);
+    }
+  }
+
+  public void selectDropDown(By by, String optionValueText) {
+    try {
+      Select dropdown = new Select(driver.findElement(by));
+      dropdown.selectByVisibleText(optionValueText);
+    } catch (Exception e) {
+      logger.error("Error: ", e);
+      Assert.assertTrue(false);
+    }
+  }
+
+  public void selectDropDown(WebElement element, String optionValueText) {
+    try {
+      Select dropdown = new Select(element);
+      dropdown.selectByVisibleText(optionValueText);
+    } catch (Exception e) {
+      logger.error("Error: ", e);
+      Assert.assertTrue(false);
+    }
+  }
+  public void customWait(double inSeconds) {
+    try {
+      Thread.sleep((long) (inSeconds * 1000));
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
 }
